@@ -71,7 +71,6 @@ public class DealershipFileManager {
             //Append - whether the file is open or not
 
 
-
 //            if(fileWriter.length() > 0){
 //                fileWriter.write(System.lineSeparator());
 //            }
