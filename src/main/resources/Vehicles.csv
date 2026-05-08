@@ -1,0 +1,23 @@
+VIN (Last 5)|Year|Make|Model|Vehicle Type|Color|Odometer (Miles)|Price (USD)
+45678|1999|Nissan|Skyline GT-R R34|Coupe|Bayside Blue|54000|189000
+65432|1994|Toyota|Supra MK4|Coupe|Red|68000|145000
+33445|1995|Mazda|RX-7 FD|Coupe|Black|72000|78000
+77665|1992|Honda|NSX|Coupe|Formula Red|49000|135000
+59876|2001|Honda|S2000|Convertible|Silverstone Metallic|61000|36000
+81716|1999|Subaru|Impreza WRX STI|Sedan|World Rally Blue|84000|42000
+66554|1998|Mitsubishi|Lancer Evolution V|Sedan|White|77000|58000
+22333|1986|Toyota|AE86 Sprinter Trueno|Coupe|White/Black|95000|47000
+77665|2000|Nissan|Silvia Spec-R S15|Coupe|Yellow|67000|52000
+44321|1994|Toyota|MR2 Turbo|Coupe|White|88000|29000
+12233|1991|Nissan|Fairlady Z 300ZX|Coupe|Black|91000|25000
+77661|2000|Honda|Integra Type R|Coupe|Championship White|59000|51000
+56789|1989|Mazda|RX-7 FC|Coupe|Silver|102000|24000
+67891|1993|Nissan|Skyline GT-R R32|Coupe|Gunmetal Gray|79000|72000
+76655|1996|Nissan|Skyline GT-R R33|Coupe|Midnight Purple|73000|93000
+22233|2005|Mitsubishi|Lancer Evolution IX|Sedan|Graphite Gray|66000|47000
+23344|2004|Subaru|Impreza WRX STI|Sedan|Blue|81000|31000
+88776|1994|Toyota|Celica GT-Four|Coupe|White|93000|28000
+56789|1996|Nissan|180SX Hatchback|Hatchback|Red|98000|26000
+11223|1992|Honda|Beat|Convertible|Yellow|57000|18000
+
+move header (Line 1) to toString()
