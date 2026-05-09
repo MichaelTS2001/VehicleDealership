@@ -10,10 +10,11 @@ import java.util.List;
 public class DealershipFileManager {
 
     //name of the class
-    public static List<Vehicle> getVehicles(){
+    //doesn't belong to the vehicle class, belongs to the dealership Object
+    public Dealership getVehicles(){
 
-        //create an Array List
-        List<Vehicle> vehicleList = new ArrayList<>();
+        //try-catch needs to return something
+        Dealership dealership = null;
 
         //use try-catch to validate the file manager / to make sure it's not broken
         try{
@@ -26,7 +27,11 @@ public class DealershipFileManager {
             //Variable to hold each line of the csv file
             String input;
 
-            bufferedReader.readLine(); // Skips the header in the csv file
+            //if the first the line is the title, this will break up the first line
+            if((input = bufferedReader.readLine()) != null){
+                String[] csvRow = input.split("\\|");
+                dealership = new Dealership(csvRow[0], csvRow[1], csvRow[2]);
+            }
 
             //while a line in the csv file is not empty (has nothing), run the while loop
             while( (input = bufferedReader.readLine()) != null){
@@ -45,20 +50,19 @@ public class DealershipFileManager {
                 //Create an object for each line of the csv file
                 Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
 
-                //making a copy list (short term list) of the csv file (permanent list)
-                vehicleList.add(vehicle);
+                //Takes the vehicle object and adds it to the dealership list
+                dealership.addVehicle(vehicle);
             }
             bufferedReader.close(); //Cuts the connection (for security) / closes the loop
 
             //returns the finished vehicle list back to me
-            return vehicleList;
+            return getVehicles();
 
         }
         catch(IOException ex){
             System.out.println("There was a error reading the file");
         }
-
-        return new ArrayList<>();
+        return dealership;
     }
 
     //fileWriter takes the copy list (short term) and updates the permanent list (csv file) with data

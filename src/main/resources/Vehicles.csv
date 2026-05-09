@@ -1,4 +1,4 @@
-VIN (Last 5)|Year|Make|Model|Vehicle Type|Color|Odometer (Miles)|Price (USD)
+Midnight Imports|4821 Freedom Drive|704-555-3812
 45678|1999|Nissan|Skyline GT-R R34|Coupe|Bayside Blue|54000|189000
 65432|1994|Toyota|Supra MK4|Coupe|Red|68000|145000
 33445|1995|Mazda|RX-7 FD|Coupe|Black|72000|78000
@@ -19,5 +19,3 @@ VIN (Last 5)|Year|Make|Model|Vehicle Type|Color|Odometer (Miles)|Price (USD)
 88776|1994|Toyota|Celica GT-Four|Coupe|White|93000|28000
 56789|1996|Nissan|180SX Hatchback|Hatchback|Red|98000|26000
 11223|1992|Honda|Beat|Convertible|Yellow|57000|18000
-
-move header (Line 1) to toString()
