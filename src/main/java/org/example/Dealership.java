@@ -58,24 +58,15 @@ public class Dealership {
         return inventory;
     }
 
-    //method to find specific make of vehicle
-    public List<Vehicle> getVehicleMake(String make) {
-        List<Vehicle> carMake = new ArrayList<>();
+    //method to find specific make and model of vehicle
+    public List<Vehicle> getVehicleMakeModel(String make, String model) {
+        List<Vehicle> carMakeModel = new ArrayList<>();
         for (Vehicle car : inventory) {
-            if (car.getMake().equalsIgnoreCase(make)) ;
-            carMake.add(car);
+            if (car.getMake().equalsIgnoreCase(make) && car.getModel().equalsIgnoreCase(model)){
+                carMakeModel.add(car);
+            }
         }
-        return carMake;
-    }
-
-    //method to find specific model of vehicle
-    public List<Vehicle> getVehicleModel(String model) {
-        List<Vehicle> carModel = new ArrayList<>();
-        for (Vehicle car : inventory) {
-            if (car.getModel().equalsIgnoreCase(model)) ;
-            carModel.add(car);
-        }
-        return carModel;
+        return carMakeModel;
     }
 
     //method to find vehicle by car price range
