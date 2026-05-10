@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Dealership {
 
@@ -42,7 +43,91 @@ public class Dealership {
         this.phone = phone;
     }
 
-    public void addVehicle(Vehicle vehicle){
+    //add a vehicle to the inventory list
+    public void addVehicle(Vehicle vehicle) {
         inventory.add(vehicle);
+    }
+
+    //remove a vehicle from the inventory list
+    public void removeVehicle(Vehicle vehicle) {
+        inventory.remove(vehicle);
+    }
+
+    //get all the vehicles from the inventory
+    public List<Vehicle> getAllVehicles() {
+        return inventory;
+    }
+
+    //method to find specific make of vehicle
+    public List<Vehicle> getVehicleMake(String make) {
+        List<Vehicle> carMake = new ArrayList<>();
+        for (Vehicle car : inventory) {
+            if (car.getMake().equalsIgnoreCase(make)) ;
+            carMake.add(car);
+        }
+        return carMake;
+    }
+
+    //method to find specific model of vehicle
+    public List<Vehicle> getVehicleModel(String model) {
+        List<Vehicle> carModel = new ArrayList<>();
+        for (Vehicle car : inventory) {
+            if (car.getModel().equalsIgnoreCase(model)) ;
+            carModel.add(car);
+        }
+        return carModel;
+    }
+
+    //method to find vehicle by car price range
+    public List<Vehicle> getVehicleByPrice(double min, double max) {
+        List<Vehicle> carPriceRange = new ArrayList<>();
+        for (Vehicle carPrice : inventory) {
+            if (carPrice.getPrice() >= min && carPrice.getPrice() <= max) {
+                carPriceRange.add(carPrice);
+            }
+        }
+        return carPriceRange;
+    }
+
+    //method to find vehicle by year range
+    public List<Vehicle> getVehicleByYear(double min, double max) {
+        List<Vehicle> carYearRange = new ArrayList<>();
+        for (Vehicle carRange : inventory) {
+            if (carRange.getYear() >= min && carRange.getYear() <= max) {
+                carYearRange.add(carRange);
+            }
+        }
+        return carYearRange;
+    }
+
+    //method to find specific color of vehicle
+    public List<Vehicle> getVehicleColor(String color) {
+        List<Vehicle> carColor = new ArrayList<>();
+        for (Vehicle car : inventory) {
+            if (car.getColor().equalsIgnoreCase(color)) ;
+            carColor.add(car);
+        }
+        return carColor;
+    }
+
+    //method to find vehicle by Odometer Range
+    public List<Vehicle> getVehicleByOdometer(double min, double max) {
+        List<Vehicle> carOdometer = new ArrayList<>();
+        for (Vehicle carRange : inventory) {
+            if (carRange.getOdometer() >= min && carRange.getOdometer() <= max) {
+                carOdometer.add(carRange);
+            }
+        }
+        return carOdometer;
+    }
+
+    //method to find vehicle type
+    public List<Vehicle> getVehicleType(String vehicleType) {
+        List<Vehicle> carType = new ArrayList<>();
+        for (Vehicle car : inventory) {
+            if (car.getVehicleType().equalsIgnoreCase(vehicleType)) ;
+            carType.add(car);
+        }
+        return carType;
     }
 }
