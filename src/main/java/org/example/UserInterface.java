@@ -13,10 +13,10 @@ public class UserInterface {
 
     //Reads the private methods first
     public UserInterface(){
-        fileManager();
+        init();
     }
 
-    private void fileManager(){
+    private void init(){
        //Officially create the list here
         //File manager does NOT do its job until you call it
         DealershipFileManager fileManager = new DealershipFileManager();
@@ -26,17 +26,16 @@ public class UserInterface {
     }
 
     public void display(){
-        fileManager();
 
         while(true){
             System.out.println("----- Welcome to Midnight Imports! ------");
 
-            System.out.println("What services can we help you with today?");
-            System.out.println("\t1. Find Vehicles");
-            System.out.println("\t2. List all vehicles");
-            System.out.println("\t3. Add vehicle");
-            System.out.println("\t4. Remove vehicle");
-            System.out.println("\t5. Exit");
+            System.out.println("What services can we help you with today?"
+            + "\t1. Find Vehicles"
+            + "\t2. List all vehicles"
+            + "\t3. Add vehicle"
+            + "\t4. Remove vehicle"
+            + "\t5. Exit");
 
             System.out.print("\nSelect one of the listed options: ");
 
@@ -50,14 +49,14 @@ public class UserInterface {
     }
 
     public void filterMenu(){
-        System.out.println("\nSelect a filter option to find a vehicle\n");
-        System.out.println("\t1. Find vehicle by year");
-        System.out.println("\t2. Find vehicle by make");
-        System.out.println("\t3. Find vehicle by make and model");
-        System.out.println("\t4. Find vehicle by vehicle type");
-        System.out.println("\t5. Find vehicle by color");
-        System.out.println("\t6. Find vehicle by odometer (mileage) range");
-        System.out.println("\t7. Find vehicle by price range");
+        System.out.println("\nSelect a filter option to find a vehicle\n"
+            + "\t1. Find vehicle by year"
+            + "\t2. Find vehicle by make"
+            + "\t3. Find vehicle by make and model"
+            + "\t4. Find vehicle by vehicle type"
+            + "\t5. Find vehicle by color"
+            + "\t6. Find vehicle by odometer (mileage) range"
+            + "\t7. Find vehicle by price range");
 
         System.out.print("\n Select one of the filter options above: ");
 
