@@ -11,7 +11,7 @@ public class DealershipFileManager {
 
     //name of the class
     //doesn't belong to the vehicle class, belongs to the dealership Object
-    public Dealership getVehicles(){
+    public Dealership getDealership(){
 
         //try-catch needs to return something
         Dealership dealership = null;
@@ -27,11 +27,7 @@ public class DealershipFileManager {
             //Variable to hold each line of the csv file
             String input;
 
-            //if the first the line is the title, this will break up the first line
-            if((input = bufferedReader.readLine()) != null){
-                String[] csvRow = input.split("\\|");
-                dealership = new Dealership(csvRow[0], csvRow[1], csvRow[2]);
-            }
+           dealership = new Dealership("Midnight Imports", "|4821 Freedom Drive", "704-555-3812");
 
             //while a line in the csv file is not empty (has nothing), run the while loop
             while( (input = bufferedReader.readLine()) != null){
@@ -54,9 +50,6 @@ public class DealershipFileManager {
                 dealership.addVehicle(vehicle);
             }
             bufferedReader.close(); //Cuts the connection (for security) / closes the loop
-
-            //returns the finished vehicle list back to me
-            return getVehicles();
 
         }
         catch(IOException ex){

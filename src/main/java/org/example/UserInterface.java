@@ -2,23 +2,27 @@ package org.example;
 
 import java.util.List;
 import java.util.Scanner;
-import java.util.concurrent.Delayed;
 
 public class UserInterface {
 
     private Dealership dealership;
     private Scanner scanner;
-    private Vehicle vehicle;
 
 
     //constructor
+
+    //Reads the private methods first
     public UserInterface(){
-        this.scanner = new Scanner(System.in);
+        fileManager();
     }
 
     private void fileManager(){
+       //Officially create the list here
+        //File manager does NOT do its job until you call it
         DealershipFileManager fileManager = new DealershipFileManager();
-        this.dealership = fileManager.getVehicles();
+
+        //Now that
+        this.dealership = fileManager.getDealership();
     }
 
     public void display(){
@@ -26,6 +30,7 @@ public class UserInterface {
 
         while(true){
             System.out.println("----- Welcome to Midnight Imports! ------");
+
             System.out.println("What services can we help you with today?");
             System.out.println("\t1. Find Vehicles");
             System.out.println("\t2. List all vehicles");
