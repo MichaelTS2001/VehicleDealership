@@ -88,6 +88,6 @@ public class Vehicle {
     }
 
     public String toString(){
-        return String.format("%d|%d|%s|%s|%s|%s|%f|%f%n", vin, year, make, model, vehicleType, color, odometer, price);
+        return String.format("%d|%d|%s|%s|%s|%s|%d|%d%n", vin, year, make, model, vehicleType, color, odometer, price);
     }
 }

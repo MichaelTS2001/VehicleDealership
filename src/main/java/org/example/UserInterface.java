@@ -8,12 +8,12 @@ public class UserInterface {
     private Dealership dealership;
     private Scanner scanner;
 
-
     //constructor
 
     //Reads the private methods first
     public UserInterface(){
         init();
+        scanner = new Scanner(System.in);
     }
 
     private void init(){
@@ -30,14 +30,14 @@ public class UserInterface {
         while(true){
             System.out.println("----- Welcome to Midnight Imports! ------");
 
-            System.out.println("What services can we help you with today?"
-            + "\t1. Find Vehicles"
-            + "\t2. List all vehicles"
-            + "\t3. Add vehicle"
-            + "\t4. Remove vehicle"
-            + "\t5. Exit");
+            System.out.println("What services can we help you with today?\n"
+            + "\t1. Find Vehicles\n"
+            + "\t2. List all vehicles\n"
+            + "\t3. Add vehicle\n"
+            + "\t4. Remove vehicle\n"
+            + "\t5. Exit\n");
 
-            System.out.print("\nSelect one of the listed options: ");
+            System.out.print("Select one of the listed options: ");
 
             int option = scanner.nextInt();
 
@@ -50,33 +50,33 @@ public class UserInterface {
 
     public void filterMenu(){
         System.out.println("\nSelect a filter option to find a vehicle\n"
-            + "\t1. Find vehicle by year"
-            + "\t2. Find vehicle by make"
-            + "\t3. Find vehicle by make and model"
-            + "\t4. Find vehicle by vehicle type"
-            + "\t5. Find vehicle by color"
-            + "\t6. Find vehicle by odometer (mileage) range"
-            + "\t7. Find vehicle by price range");
+            + "\t1. Find vehicle by year\n"
+            + "\t2. Find vehicle by make\n"
+            + "\t3. Find vehicle by make and model\n"
+            + "\t4. Find vehicle by vehicle type\n"
+            + "\t5. Find vehicle by color\n"
+            + "\t6. Find vehicle by odometer (mileage) range\n"
+            + "\t7. Find vehicle by price range\n");
 
-        System.out.print("\n Select one of the filter options above: ");
+        System.out.print(" Select one of the filter options above: ");
 
         int filter = scanner.nextInt();
+
+        getYear();
     }
 
     public void getYear(){
         System.out.print("\nEnter oldest year for vehicle: ");
 
-        double oldest = scanner.nextDouble();
+        int oldest = scanner.nextInt();
 
-        System.out.println("\nEnter newest year for vehicle");
+        System.out.print("\nEnter newest year for vehicle: ");
 
-        double newest = scanner.nextDouble();
+        int newest = scanner.nextInt();
 
-        List<Vehicle> vehicleList = dealership.getVehicleByPrice(oldest, newest);
+        dealership.getVehicleByYear(oldest, newest);
 
-        for(Vehicle car : vehicleList){
-            System.out.println(car.toString());
-        }
+        System.out.println();
+
     }
-
 }

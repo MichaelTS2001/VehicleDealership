@@ -59,14 +59,13 @@ public class Dealership {
     }
 
     //method to find specific make and model of vehicle
-    public List<Vehicle> getVehicleMakeModel(String make, String model) {
-        List<Vehicle> carMakeModel = new ArrayList<>();
+    public void getVehicleMakeModel(String make, String model) {
+
         for (Vehicle car : inventory) {
             if (car.getMake().equalsIgnoreCase(make) && car.getModel().equalsIgnoreCase(model)){
-                carMakeModel.add(car);
+                car.toString();
             }
         }
-        return carMakeModel;
     }
 
     //method to find vehicle by car price range
@@ -81,14 +80,13 @@ public class Dealership {
     }
 
     //method to find vehicle by year range
-    public List<Vehicle> getVehicleByYear(double min, double max) {
-        List<Vehicle> carYearRange = new ArrayList<>();
+    public void getVehicleByYear(double min, double max) {
+
         for (Vehicle carRange : inventory) {
             if (carRange.getYear() >= min && carRange.getYear() <= max) {
-                carYearRange.add(carRange);
+                carRange.toString();
             }
         }
-        return carYearRange;
     }
 
     //method to find specific color of vehicle
