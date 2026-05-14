@@ -74,14 +74,12 @@ public class Dealership {
     }
 
     //method to find vehicle by car price range
-    public List<Vehicle> getVehicleByPrice(double min, double max) {
-        List<Vehicle> carPriceRange = new ArrayList<>();
+    public void getVehicleByPrice(double min, double max) {
         for (Vehicle carPrice : inventory) {
             if (carPrice.getPrice() >= min && carPrice.getPrice() <= max) {
-                carPriceRange.add(carPrice);
+                System.out.println(carPrice.toString());
             }
         }
-        return carPriceRange;
     }
 
     //method to find vehicle by year range

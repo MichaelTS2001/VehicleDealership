@@ -97,7 +97,13 @@ public class UserInterface {
                 break;
             case 5:
                 vehicleOdometer();
-
+                break;
+            case 6:
+                vehiclePrice();
+                break;
+            default:
+                System.out.println("Invalid Input. Please try again.");
+                break;
         }
 
     }
@@ -144,7 +150,6 @@ public class UserInterface {
 
     public void vehicleOdometer(){
 
-
         System.out.print("\nEnter car's minimum odometer: ");
 
         int minOdometer = Integer.parseInt(scanner.nextLine());
@@ -154,6 +159,19 @@ public class UserInterface {
         int maxOdometer = scanner.nextInt();
 
         dealership.getVehicleByOdometer(minOdometer, maxOdometer);
+    }
+
+    public void vehiclePrice(){
+
+        System.out.print("\nEnter car's minimum cost: ");
+
+        double minCost = Double.parseDouble(scanner.nextLine());
+
+        System.out.print("\nEnter car's maximum cost: ");
+
+        double maxCost = scanner.nextDouble();
+
+        dealership.getVehicleByPrice(minCost, maxCost);
     }
 
     public void displayVehicles(){
