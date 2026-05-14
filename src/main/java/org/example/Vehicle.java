@@ -2,8 +2,8 @@ package org.example;
 
 public class Vehicle {
 
-    private int vin;
-    private int year;
+    private String vin;
+    private String year;
     private String make;
     private String model;
     private String vehicleType; // car, truck, etc
@@ -11,7 +11,7 @@ public class Vehicle {
     private int odometer;
     private double price;
 
-    public Vehicle(int vin, int year, String make, String model, String vehicleType, String color,
+    public Vehicle(String vin, String year, String make, String model, String vehicleType, String color,
                    int odometer, double price) {
         this.vin = vin;
         this.year = year;
@@ -23,19 +23,19 @@ public class Vehicle {
         this.price = price;
     }
 
-    public int getVin() {
+    public String getVin() {
         return vin;
     }
 
-    public void setVin(int vin) {
+    public void setVin(String vin) {
         this.vin = vin;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
@@ -87,7 +87,11 @@ public class Vehicle {
         this.price = price;
     }
 
-    public String toString(){
-        return String.format("%d|%d|%s|%s|%s|%s|%d|%d%n", vin, year, make, model, vehicleType, color, odometer, price);
+
+    //Call this to READ the file, not write on it
+    @Override
+    public String toString() {
+        return "\n" + vin + " | " + year +  " | " + make +  " | " + model +  " | " + vehicleType +
+                " | " + color +  " | " + odometer +  " | $" + price;
     }
 }

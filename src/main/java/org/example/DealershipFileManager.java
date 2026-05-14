@@ -34,14 +34,14 @@ public class DealershipFileManager {
                 String[] csvRow = input.split("\\|"); //Splits each piece of data from each line by |
 
                 //describe what data type is and in which index number it is in
-                int vin = Integer.parseInt(csvRow[0]);
-                int year = Integer.parseInt(csvRow[1]);
+                String vin = (csvRow[0]);
+                String year = (csvRow[1]);
                 String make = (csvRow[2]);
                 String model = (csvRow[3]);
                 String vehicleType = (csvRow[4]);
                 String color = (csvRow[5]);
                 int odometer = Integer.parseInt(csvRow[6]);
-                int price = Integer.parseInt(csvRow[7]);
+                double price = Double.parseDouble(csvRow[7]);
 
                 //Create an object for each line of the csv file
                 Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, price);
@@ -72,7 +72,7 @@ public class DealershipFileManager {
 //                fileWriter.write(System.lineSeparator());
 //            }
 
-            fileWriter.write(String.format("%d|%d|%s|%s|%s|%s|%d|%f\n", vehicle.getVin(), vehicle.getYear(),
+            fileWriter.write(String.format("\n%s|%s|%s|%s|%s|%s|%d|%f", vehicle.getVin(), vehicle.getYear(),
                     vehicle.getMake(), vehicle.getModel(), vehicle.getVehicleType(), vehicle.getColor(),
                     vehicle.getOdometer(), vehicle.getPrice()));
 

@@ -49,8 +49,12 @@ public class Dealership {
     }
 
     //remove a vehicle from the inventory list
-    public void removeVehicle(Vehicle vehicle) {
-        inventory.remove(vehicle);
+    public void removeVehicle(String vin) {
+        for(Vehicle car : inventory){
+            if(car.getVin().equalsIgnoreCase(vin)){
+                inventory.remove(car);
+            }
+        }
     }
 
     //get all the vehicles from the inventory
@@ -59,11 +63,12 @@ public class Dealership {
     }
 
     //method to find specific make and model of vehicle
+    //(ASK ABOUT MODEL CAPITALIZATION)
     public void getVehicleMakeModel(String make, String model) {
 
         for (Vehicle car : inventory) {
-            if (car.getMake().equalsIgnoreCase(make) && car.getModel().equalsIgnoreCase(model)){
-                car.toString();
+            if (car.getMake().equalsIgnoreCase(make) && car.getModel().contains(model)){
+                System.out.println(car.toString());
             }
         }
     }
@@ -80,34 +85,30 @@ public class Dealership {
     }
 
     //method to find vehicle by year range
-    public void getVehicleByYear(double min, double max) {
+    public void getVehicleByYear(String min, String max) {
 
         for (Vehicle carRange : inventory) {
-            if (carRange.getYear() >= min && carRange.getYear() <= max) {
-                carRange.toString();
+            if (carRange.getYear().compareToIgnoreCase(min) >= 1 && carRange.getYear().compareToIgnoreCase(max) <= -1) {
+                System.out.println(carRange.toString());
             }
         }
     }
 
     //method to find specific color of vehicle
-    public List<Vehicle> getVehicleColor(String color) {
-        List<Vehicle> carColor = new ArrayList<>();
+    public void getVehicleColor(String color) {
         for (Vehicle car : inventory) {
-            if (car.getColor().equalsIgnoreCase(color)) ;
-            carColor.add(car);
+            if (car.getColor().equalsIgnoreCase(color))
+                System.out.println(car.toString());
         }
-        return carColor;
     }
 
     //method to find vehicle by Odometer Range
-    public List<Vehicle> getVehicleByOdometer(double min, double max) {
-        List<Vehicle> carOdometer = new ArrayList<>();
+    public void getVehicleByOdometer(int min, int max) {
         for (Vehicle carRange : inventory) {
             if (carRange.getOdometer() >= min && carRange.getOdometer() <= max) {
-                carOdometer.add(carRange);
+                System.out.println(carRange.toString());
             }
         }
-        return carOdometer;
     }
 
     //method to find vehicle type
